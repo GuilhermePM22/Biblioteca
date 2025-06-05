@@ -1,6 +1,6 @@
 package model;
 
-public interface Emprestimo {
+public interface Emprestavel  {
     boolean emprestar(Usuario usuario);
     boolean devolver();
 }
