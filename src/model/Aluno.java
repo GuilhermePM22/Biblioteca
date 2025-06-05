@@ -8,4 +8,8 @@ public class Aluno extends Usuario {
       super (id, nome, email);
       this.matricula = matricula;
     }
+        @Override
+    public void solicitarEmprestimo(Livro livro) {
+        System.out.println(nome + " solicitou o livro: " + livro.getTitulo());
+    }
 }
