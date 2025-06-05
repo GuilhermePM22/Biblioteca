@@ -1,6 +1,6 @@
-package model;
+package Model;
 
-public class Usuario {
+public abstract class Usuario {
     protected int id;
     protected String nome;
     protected String email;

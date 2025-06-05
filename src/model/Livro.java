@@ -1,4 +1,4 @@
-package model;
+package Model;
 
 public class Livro extends MaterialBiblioteca implements Emprestavel {
     private String autor;
@@ -17,6 +17,27 @@ public class Livro extends MaterialBiblioteca implements Emprestavel {
             return true;
         }
         return false;
+
     }
     
+    @Override
+    public boolean devolver() {
+        if (!disponivel) {
+            disponivel = true;
+            System.out.println("Livro devolvido.");
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public void exibirInformacoes() {
+        System.out.println("Livro: " + titulo + ", Autor: " + autor);
+    }
+
+    public String getTitulo() { 
+        return titulo; 
+    }
 }
+    
+

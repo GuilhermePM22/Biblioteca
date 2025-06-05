@@ -1,12 +1,12 @@
-package model;
+package Model;
 
 public abstract class MaterialBiblioteca {
-    private int id;
-    private String Livro;
+    protected int id;
+    protected String titulo;
 
-    public MaterialBiblioteca(int id, String Livro){
+    public MaterialBiblioteca(int id, String titulo) {
         this.id = id;
-        this.Livro = Livro;
+        this.titulo = titulo;
     }
 
     public abstract void exibirInformacoes();
