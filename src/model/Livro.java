@@ -1,10 +1,10 @@
-package Model;
+package model;
 
 public class Livro extends MaterialBiblioteca implements Emprestavel {
     private String autor;
     private boolean disponivel = true;
 
-    public Livro(int id, String titulo, String autor){
+    public Livro(int id, String titulo, String autor) {
         super(id, titulo);
         this.autor = autor;
     }
@@ -17,9 +17,8 @@ public class Livro extends MaterialBiblioteca implements Emprestavel {
             return true;
         }
         return false;
-
     }
-    
+
     @Override
     public boolean devolver() {
         if (!disponivel) {
@@ -35,9 +34,5 @@ public class Livro extends MaterialBiblioteca implements Emprestavel {
         System.out.println("Livro: " + titulo + ", Autor: " + autor);
     }
 
-    public String getTitulo() { 
-        return titulo; 
-    }
+    public String getTitulo() { return titulo; }
 }
-    
-

@@ -1,4 +1,4 @@
-package Model;
+package model;
 
 public class Professor extends Usuario {
     private String departamento;
@@ -10,6 +10,6 @@ public class Professor extends Usuario {
 
     @Override
     public void solicitarEmprestimo(Livro livro) {
-        System.out.println(nome + " solicitou o livro: " + livro.getTitulo());
+        System.out.println(getNome() + " solicitou o livro: " + livro.getTitulo());
     }
 }

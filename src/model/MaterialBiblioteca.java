@@ -1,4 +1,5 @@
-package Model;
+// Classe abstrata MaterialBiblioteca
+package model;
 
 public abstract class MaterialBiblioteca {
     protected int id;

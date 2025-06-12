@@ -1,9 +1,9 @@
-package View;
+package view;
 
-import Model.Usuario;
+import model.Usuario;
 
 public class UsuarioView {
     public void mostrarUsuario(Usuario usuario) {
-        System.out.println("Usuário: " + usuario.nome + " Email: " + usuario.getEmail());
+        System.out.println("Usuário: " + usuario.getNome() + ", Email: " + usuario.getEmail());
     }
 }
