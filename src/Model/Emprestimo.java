@@ -1,11 +1,12 @@
-package Model;
+package model;
+
 import java.time.LocalDate;
 
 public class Emprestimo {
-    private int id;
-    private Usuario usuario;
-    private Livro livro;
-    private LocalDate dataEmprestimo;
+    int id;
+    Usuario usuario;
+    Livro livro;
+    LocalDate dataEmprestimo;
 
     public Emprestimo(int id, Usuario usuario, Livro livro) {
         this.id = id;

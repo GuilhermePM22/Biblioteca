@@ -10,9 +10,7 @@ public class EmprestimoController {
     private List<Usuario> usuarios;
     private List<Livro> livros;
 
-    public EmprestimoController(List<Emprestimo> emprestimos, 
-                              List<Usuario> usuarios, 
-                              List<Livro> livros) {
+    public EmprestimoController(List<Emprestimo> emprestimos, List<Usuario> usuarios, List<Livro> livros) {
         this.emprestimos = emprestimos;
         this.usuarios = usuarios;
         this.livros = livros;
@@ -20,16 +18,20 @@ public class EmprestimoController {
 
     public void realizarEmprestimo() {
         if (usuarios.isEmpty() || livros.isEmpty()) {
-            System.out.println("Cadastre usuários e livros primeiro!");
+            System.out.println("Necessário ter usuários e livros cadastrados.");
             return;
         }
-        
-        Usuario usuario = usuarios.get(0); // Pega o primeiro usuário
-        Livro livro = livros.get(0); // Pega o primeiro livro
-        
+
+        Usuario usuario = usuarios.get(0);
+        Livro livro = livros.get(0);
+
         if (livro.emprestar(usuario)) {
             emprestimos.add(new Emprestimo(emprestimos.size() + 1, usuario, livro));
-            System.out.println("Empréstimo realizado para: " + usuario.getNome());
+            System.out.println("Empréstimo realizado com sucesso.");
         }
+    }
+
+    public void Devolver() {
+        System.out.println("Empréstimo devolvido.");
     }
 }

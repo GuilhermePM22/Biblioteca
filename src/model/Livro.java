@@ -1,10 +1,10 @@
-package Model;
-
+package model;
+// a class livro e subclass da MaterialBiblioteca que implemente Emprestavel.
 public class Livro extends MaterialBiblioteca implements Emprestavel {
     private String autor;
     private boolean disponivel = true;
 
-    public Livro(int id, String titulo, String autor){
+    public Livro(int id, String titulo, String autor) {
         super(id, titulo);
         this.autor = autor;
     }
@@ -17,9 +17,8 @@ public class Livro extends MaterialBiblioteca implements Emprestavel {
             return true;
         }
         return false;
-
     }
-    
+
     @Override
     public boolean devolver() {
         if (!disponivel) {
@@ -32,12 +31,7 @@ public class Livro extends MaterialBiblioteca implements Emprestavel {
 
     @Override
     public void exibirInformacoes() {
-        System.out.println("Livro: " + titulo + ", Autor: " + autor);
+        System.out.println("Livro: " + getTitulo() + ", Autor: " + autor);
     }
 
-    public String getTitulo() { 
-        return titulo; 
-    }
 }
-    
-

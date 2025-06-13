@@ -1,5 +1,3 @@
-
-
 package controller;
 
 import java.util.List;
@@ -8,26 +6,24 @@ import model.Livro;
 
 public class LivroController {
     private List<Livro> livros;
-    private Scanner scanner;
+    private Scanner scanner = new Scanner(System.in);
 
-    public LivroController(List<Livro> livros, Scanner scanner) {
+    public LivroController(List<Livro> livros) {
         this.livros = livros;
-        this.scanner = scanner;
     }
 
     public void adicionarLivro() {
-        System.out.println("\n--- Cadastro de Livro ---");
-        System.out.print("ID: ");
+        System.out.println("ID: ");
         int id = scanner.nextInt();
         scanner.nextLine();
 
-        System.out.print("Título: ");
+        System.out.println("Título: ");
         String titulo = scanner.nextLine();
 
-        System.out.print("Autor: ");
+        System.out.println("Autor: ");
         String autor = scanner.nextLine();
 
         livros.add(new Livro(id, titulo, autor));
-        System.out.println("Livro cadastrado com sucesso!");
     }
 }
+

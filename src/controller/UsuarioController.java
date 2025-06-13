@@ -7,46 +7,39 @@ import model.Aluno;
 import model.Professor;
 
 public class UsuarioController {
-    private List<Usuario> usuarios;
-    private Scanner scanner;
+    List<Usuario> usuarios;
+    Scanner scanner = new Scanner(System.in);
 
-    public UsuarioController(List<Usuario> usuarios, Scanner scanner) {
+    public UsuarioController(List<Usuario> usuarios) {
         this.usuarios = usuarios;
-        this.scanner = scanner;
     }
 
     public void adicionarUsuario() {
-        System.out.println("\n--- Cadastro de Usuário ---");
-        System.out.print("Tipo (1-Aluno, 2-Professor): ");
+        System.out.println("Tipo de usuário 1 - Aluno, 2 - Professor: ");
         int tipo = scanner.nextInt();
-        scanner.nextLine();
+        scanner.nextLine(); // Consome a quebra de linha restante
 
-        System.out.print("ID: ");
+        System.out.println("ID: ");
         int id = scanner.nextInt();
         scanner.nextLine();
 
-        System.out.print("Nome: ");
+        System.out.println("Nome: ");
         String nome = scanner.nextLine();
 
-        System.out.print("Email: ");
+        System.out.println("Email: ");
         String email = scanner.nextLine();
 
         if (tipo == 1) {
-            System.out.print("Matrícula: ");
+            System.out.println("Matrícula: ");
             String matricula = scanner.nextLine();
             usuarios.add(new Aluno(id, nome, email, matricula));
         } else if (tipo == 2) {
-            System.out.print("Departamento: ");
+            System.out.println("Departamento: ");
             String departamento = scanner.nextLine();
             usuarios.add(new Professor(id, nome, email, departamento));
-        }
-        System.out.println("Usuário cadastrado com sucesso!");
-    }
-
-    public void listarUsuarios() {
-        System.out.println("\n--- Usuários Cadastrados ---");
-        for (Usuario usuario : usuarios) {
-            System.out.println(usuario.getNome() + " (" + usuario.getEmail() + ")");
+        } else {
+            System.out.println("Tipo inválido.");
         }
     }
 }
+
