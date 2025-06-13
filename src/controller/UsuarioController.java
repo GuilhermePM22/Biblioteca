@@ -5,17 +5,28 @@ import java.util.Scanner;
 import model.Usuario;
 import model.Aluno;
 import model.Professor;
+import model.Livro;
+import model.Emprestimo;
 
 public class UsuarioController {
+<<<<<<< HEAD
     List<Usuario> usuarios;
     Scanner scanner = new Scanner(System.in);
+=======
+    private List<Usuario> usuarios;
+    private Scanner scanner = new Scanner(System.in);
+>>>>>>> 9dfd0db303f6d0d68f437c56a49b31339fe2fedb
 
     public UsuarioController(List<Usuario> usuarios) {
         this.usuarios = usuarios;
     }
 
     public void adicionarUsuario() {
+<<<<<<< HEAD
         System.out.println("Tipo de usuário 1 - Aluno, 2 - Professor: ");
+=======
+        System.out.println("Tipo de usuário (1 - Aluno, 2 - Professor): ");
+>>>>>>> 9dfd0db303f6d0d68f437c56a49b31339fe2fedb
         int tipo = scanner.nextInt();
         scanner.nextLine(); // Consome a quebra de linha restante
 

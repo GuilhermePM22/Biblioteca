@@ -11,14 +11,24 @@ public abstract class Usuario {
         this.nome = nome;
         this.email = email;
     }
+<<<<<<< HEAD
     // Criação do get para ser acessado de outras class.
+=======
+
+    public abstract void solicitarEmprestimo(Livro livro);
+
+    // Getters e Setters
+>>>>>>> 9dfd0db303f6d0d68f437c56a49b31339fe2fedb
     public String getNome() {
         return nome;
     }
     public String getEmail() {
         return email;
     }
+<<<<<<< HEAD
     // Solicitação de Livros.
     public abstract void solicitarEmprestimo(Livro livro);
+=======
+>>>>>>> 9dfd0db303f6d0d68f437c56a49b31339fe2fedb
 }
 
