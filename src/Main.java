@@ -1,8 +1,6 @@
 import model.Biblioteca;
+import view.*;
 import controller.*;
-import view.LivroView;
-import view.MenuView;
-import view.UsuarioView;
 
 public class Main {
     public static void main(String[] args) {
@@ -14,7 +12,6 @@ public class Main {
         UsuarioController usuarioController = new UsuarioController(biblioteca.usuarios);
         LivroController livroController = new LivroController(biblioteca.livros);
         EmprestimoController emprestimoController = new EmprestimoController(biblioteca.emprestimos, biblioteca.usuarios, biblioteca.livros);
-
 
         boolean executando = true;
 
@@ -31,20 +28,30 @@ public class Main {
                     emprestimoController.realizarEmprestimo();
                     break;
                 case 4:
-                    emprestimoController.Devolver();
+                    if (biblioteca.usuarios.isEmpty()) { // Adicionando uma verificação para lista vazia
+                        System.out.println("Não há usuários cadastrados.");
+                    } else {
+                        System.out.println("\n--- Lista de Usuários ---");
+                        biblioteca.usuarios.forEach(usuarioView::mostrarUsuario);
+                    }
                     break;
                 case 5:
-                    biblioteca.usuarios.forEach(usuarioView::mostrarUsuario);
+                    if (biblioteca.livros.isEmpty()) { // Adicionando uma verificação para lista vazia
+                        System.out.println("Não há livros cadastrados.");
+                    } else {
+                        System.out.println("\n--- Lista de Livros ---");
+                        biblioteca.livros.forEach(livroView::mostrarLivro);
+                    }
                     break;
-                case 6:
-                    biblioteca.livros.forEach(livroView::mostrarLivro);
+                case 6: // Novo case para deletar usuário
+                    usuarioController.removerUsuario();
                     break;
-                case 7:
+                case 7: // Opção de sair ajustada
                     executando = false;
+                    System.out.println("Saindo do sistema da biblioteca. Até mais!");
                     break;
                 default:
-                    System.out.println("Opção inválida.");
-                    System.out.println("Tente novamente, por favor!");
+                    System.out.println("Opção inválida. Por favor, escolha uma opção válida.");
             }
         }
     }
