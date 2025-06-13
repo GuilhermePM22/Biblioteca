@@ -2,7 +2,7 @@ package model;
 
 // A class usuario é a super class da Aluno e Professor.
 public abstract class Usuario {
-    private int id;
+    public int id;
     private String nome;
     private String email;
 

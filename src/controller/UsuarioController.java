@@ -6,8 +6,8 @@ import java.util.Iterator; // Import necessário para remover de forma segura
 import model.Usuario;
 import model.Aluno;
 import model.Professor;
-import model.Livro; // Não necessário aqui, mas mantendo para contexto
-import model.Emprestimo; // Não necessário aqui, mas mantendo para contexto
+import model.Livro;
+import model.Emprestimo;
 
 public class UsuarioController {
     private List<Usuario> usuarios;
